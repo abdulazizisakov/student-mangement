@@ -13,7 +13,7 @@ Ushbu loyiha oldingi loyihalarga qaraganda murakkabroq ma’lumotlar tuzilmalari
 - `class`, tashqi kutubxonalar va haqiqiy ma’lumotlar bazasidan foydalanmang.
 - Har bir asosiy operatsiya alohida funksiya bo‘lsin.
 - Dastur `main.py` orqali ishga tushsin.
-- Ma’lumotlarni JSON faylga saqlash asosiy talab emas.
+- Ma’lumotlarni JSON faylga saqlash asosiy talab.
 
 ## 3. Fayllar tuzilmasi
 
@@ -24,7 +24,10 @@ student_management/
 ├── grades.py
 ├── reports.py
 ├── utils.py
-└── database.py
+├── database.py
+├── data/
+├───── .gitkeep
+└───── database.json
 ```
 
 Vazifalar:
