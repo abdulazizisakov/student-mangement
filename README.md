@@ -24,7 +24,10 @@ student_management/
 ├── grades.py
 ├── reports.py
 ├── utils.py
-└── database.py
+├── database.py
+├── data/
+├───── .gitkeep
+└───── database.json
 ```
 
 Vazifalar:
