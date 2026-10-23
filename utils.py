@@ -23,4 +23,4 @@ def show_menu() -> None:
 
 
 def break_line() -> None:
-    print("-" * 100)
+    cprint("-" * 100, fore_256= "black", back_256= "yellow")
