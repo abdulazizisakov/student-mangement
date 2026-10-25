@@ -1,7 +1,8 @@
 from colored import cprint
 
 
-menu_text = """1. Barcha o‘quvchilarni ko‘rish
+menu_text = """
+1. Barcha o‘quvchilarni ko‘rish
 2. O‘quvchi qo‘shish
 3. O‘quvchi ma’lumotlarini tahrirlash
 4. O‘quvchini o‘chirish
@@ -19,7 +20,14 @@ def show_menu() -> None:
     cprint(
         text="===== STUDENT MANAGEMENT SYSTEM =====", fore_256="cyan", back_256="white"
     )
-    print(menu_text)
+
+
+def menus() -> None:
+    cprint(
+        text=menu_text,
+        fore_256="magenta"
+    ),
+    cprint("0. Chiqish", fore_256="red")
 
 
 def break_line() -> None:
