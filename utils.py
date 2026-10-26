@@ -32,3 +32,26 @@ def menus() -> None:
 
 def break_line() -> None:
     cprint("-" * 100, fore_256= "black", back_256= "yellow")
+
+
+def get_text(prompt: str) -> str:
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        cprint("Xatolik! Bo'sh qiymat kiritib bo'lmaydi!", fore_256='red')
+
+
+def get_positive_int(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
+        if value.isdigit() and int(value) > 0:
+            return int(value)
+        cprint("Xatolik! Musbat butun son kiriting", fore_256="red")
+
+
+def print_student (student: dict) -> None
+    print(
+        f"ID: {student['id']} | Ism: {student['name']} | "
+        f"Yosh: {student['age']} | Guruh: {student['group']}"
+    )
