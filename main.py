@@ -1,5 +1,5 @@
 from utils import show_menu, menus, break_line, cprint
-from students import show_all_students, add_students
+from students import show_all_students, add_students, edit_student, delete_student
 
 
 def main() -> None:
@@ -14,6 +14,12 @@ def main() -> None:
         
         elif choice == '2':
             add_students()
+
+        elif choice == '3':
+            edit_student()
+
+        elif choice == '4':
+            delete_student()
         
         elif choice == '0':
             print("Dastur yakunlandi. Xayr!")
