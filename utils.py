@@ -1,4 +1,5 @@
 from colored import cprint
+import database
 
 
 menu_text = """
@@ -34,7 +35,7 @@ def break_line() -> None:
     cprint("-" * 100, fore_256= "black", back_256= "yellow")
 
 
-def get_text(prompt: str) -> str:
+def get_text(prompt) -> str:
     while True:
         value = input(prompt).strip()
         if value:
@@ -50,8 +51,15 @@ def get_positive_int(prompt: str) -> int:
         cprint("Xatolik! Musbat butun son kiriting", fore_256="red")
 
 
-def print_student (student: dict) -> None
+def print_student (student: dict) -> None:
     print(
         f"ID: {student['id']} | Ism: {student['name']} | "
         f"Yosh: {student['age']} | Guruh: {student['group']}"
     )
+
+
+def find_student_by_id(student_id: int) -> dict | None:
+    for student in database.students:
+        if student['id'] == student_id:
+            return student
+    return None
