@@ -6,7 +6,8 @@ from students import (
     delete_student,
     search_by_id,
     search_by_name)
-from grades import add_grade, show_grades
+from grades import add_grade, show_grades 
+from reports import show_average
 
 
 def main() -> None:
@@ -39,9 +40,15 @@ def main() -> None:
 
         elif choice == '8':
             show_grades()
+
+        elif choice == '9':
+            show_average()
         
         elif choice == '0':
             print("Dastur yakunlandi. Xayr!")
             break
+
+        else:
+            cprint("Bunday menu mavjud emas!", fore_256='red')
 
 main()
