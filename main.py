@@ -7,7 +7,7 @@ from students import (
     search_by_id,
     search_by_name)
 from grades import add_grade, show_grades 
-from reports import show_average
+from reports import show_average, show_ranking, show_top_student
 
 
 def main() -> None:
@@ -43,6 +43,12 @@ def main() -> None:
 
         elif choice == '9':
             show_average()
+
+        elif choice == '10':
+            show_ranking()
+
+        elif choice == '11':
+            show_top_student()
         
         elif choice == '0':
             print("Dastur yakunlandi. Xayr!")

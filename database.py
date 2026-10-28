@@ -20,6 +20,17 @@ students = [
             "Python": [5, 5, 5],
             "Math": [4, 4]
         }
+    },
+    {
+        "id": 3,
+        "name": "Abdulaziz Isakov",
+        "age": 20,
+        "group": "DI 24-09",
+        "grades": {
+            "Python": [5, 4, 5],
+            "Math": [5, 5],
+            "Englsh": [4, 4, 5]
+        }
     }
 ]
 

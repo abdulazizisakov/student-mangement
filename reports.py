@@ -1,3 +1,4 @@
+import database
 from utils import get_positive_int, find_student_by_id, cprint
 
 
@@ -40,3 +41,54 @@ def show_average() -> None:
     print("Fanlar kesimida:")
     for subject, subject_average in calculate_subject_averages(student).items():
         print(f"  {subject}: {subject_average:.2f}")
+
+
+def build_ranking() -> tuple:
+    with_grades = []
+    without_grades = []
+
+    for student in database.students:
+        average = calculate_average(student)
+        if average is None:
+            without_grades.append(student)
+        else:
+            with_grades.append((student, average))
+
+    with_grades.sort(key=lambda item: (-item[1], item[0]["name"].lower()))
+    return with_grades, without_grades
+
+
+def show_ranking() -> None:
+    if not database.students:
+        cprint("O'quvchilar ro'yxati bo'sh.", fore_256="yellow")
+        return
+
+    with_grades, without_grades = build_ranking()
+
+    print("--- Reyting ---")
+    rank = 0
+    previous_average = None
+    for position, (student, average) in enumerate(with_grades, start=1):
+        if previous_average is None or round(average, 2) != round(previous_average, 2):
+            rank = position
+        previous_average = average
+        print(f"{rank}. {student['name']} ({student['group']}) - {average:.2f}")
+
+    if without_grades:
+        print("Bahosi yo'q o'quvchilar:")
+        for student in without_grades:
+            print(f"  - {student['name']} ({student['group']})")
+
+
+def show_top_student() -> None:
+    with_grades, _ = build_ranking()
+
+    if not with_grades:
+        cprint("Hech bir o'quvchida baho yo'q.", fore_256="yellow")
+        return
+
+    top_average = round(with_grades[0][1], 2)
+    print(f"Eng yuqori o'rtacha: {top_average:.2f}")
+    for student, average in with_grades:
+        if round(average, 2) == top_average:
+            print(f"  * {student['name']} ({student['group']})")

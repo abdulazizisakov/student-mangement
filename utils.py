@@ -13,8 +13,7 @@ menu_text = """
 8. O‘quvchining baholarini ko‘rish
 9. O‘rtacha bahoni ko‘rish
 10. O‘quvchilar reytingi
-11. Eng yuqori natijali o‘quvchi
-0. Chiqish"""
+11. Eng yuqori natijali o‘quvchi"""
 
 
 def show_menu() -> None:

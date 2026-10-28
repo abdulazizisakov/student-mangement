@@ -23,7 +23,7 @@ def add_grade() -> None:
 
     student['grades'][subject].append(grade)
 
-    cprint(f"student['name'] ga  {subject} fanidan  {grade} baho qo'shildi.", fore_256='green')
+    cprint(f"{student['name']} ga  {subject} fanidan  {grade} baho qo'shildi.", fore_256='green')
 
 
 def show_grades() -> None:
@@ -39,6 +39,6 @@ def show_grades() -> None:
         cprint(f"{student["name"]}da hali baholar yo'q", fore_256='yellow')
         return
 
-        print(f"{student['name']} baholari:")
+    print(f"{student['name']} baholari:")
     for subject, grade_list in student["grades"].items():
         print(f"  {subject}: {', '.join(map(str, grade_list))}")
