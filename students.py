@@ -70,3 +70,32 @@ def delete_student() -> None:
 
     database.students.remove(student)
     cprint(f"'{student['name']}' o'chirildi.", fore_256="green")
+
+
+def search_by_id () -> None:
+
+    student_id = get_positive_int("O'quvchi ID si: ")
+    student = find_student_by_id(student_id)
+
+    if student is None:
+        cprint("Bunday ID dagi o'quvchi topilmadi.", fore_256='red')
+        return
+
+    print_student(student)
+
+
+def search_by_name() -> None:
+    keyword = get_text ("Ism (to'liq yoki qisman): ").lower()
+
+    found = []
+    for student in database.students:
+        if keyword in student["name"].lower():
+            found.append(student)
+
+    if not found:
+        cprint("Bunday ismli o'quvchi topilmadi.", fore_256='red')
+        return
+
+    cprint(f"Topildi: {len(found)} ta", fore_256='green')
+    for student in found:
+        print_student(student)

@@ -1,5 +1,11 @@
 from utils import show_menu, menus, break_line, cprint
-from students import show_all_students, add_students, edit_student, delete_student
+from students import (
+    show_all_students, 
+    add_students, 
+    edit_student, 
+    delete_student,
+    search_by_id,
+    search_by_name)
 
 
 def main() -> None:
@@ -20,6 +26,12 @@ def main() -> None:
 
         elif choice == '4':
             delete_student()
+
+        elif choice == '5':
+            search_by_id()
+
+        elif choice == '6':
+            search_by_name()
         
         elif choice == '0':
             print("Dastur yakunlandi. Xayr!")
