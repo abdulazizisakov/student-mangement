@@ -6,6 +6,7 @@ from students import (
     delete_student,
     search_by_id,
     search_by_name)
+from grades import add_grade, show_grades
 
 
 def main() -> None:
@@ -32,6 +33,12 @@ def main() -> None:
 
         elif choice == '6':
             search_by_name()
+
+        elif choice == '7':
+            add_grade()
+
+        elif choice == '8':
+            show_grades()
         
         elif choice == '0':
             print("Dastur yakunlandi. Xayr!")

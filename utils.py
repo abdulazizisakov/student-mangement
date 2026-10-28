@@ -63,3 +63,11 @@ def find_student_by_id(student_id: int) -> dict | None:
         if student['id'] == student_id:
             return student
     return None
+
+
+def get_grade(prompt: str) -> int:
+    while True:
+        value = input(prompt).strip()
+        if value.isdigit() and 1 <= int(value) <= 5:
+            return int(value)
+        cprint("Xayolik! Baho 1 dan 5 gacha bo'lishi kerak.", fore_256='red')
